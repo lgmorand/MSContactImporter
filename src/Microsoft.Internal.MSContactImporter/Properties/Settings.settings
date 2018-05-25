@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Microsoft.Internal.MSContactImporter.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Mailbox" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RootMSFTees" Type="System.String" Scope="User">
+      <Value Profile="(Default)">&lt;RootMSFTees&gt;&lt;RootMSFTee logon="capurass" recurseLevel="-1" /&gt;&lt;/RootMSFTees&gt;</Value>
+    </Setting>
+    <Setting Name="RootDirectoryEntry" Type="System.String" Scope="User">
+      <Value Profile="(Default)">GC://corp.microsoft.com</Value>
+    </Setting>
+    <Setting Name="DistinguishedNameFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">GC://corp.microsoft.com/{0}</Value>
+    </Setting>
+    <Setting Name="Categories" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Microsoft Staff v2</Value>
+    </Setting>
+    <Setting Name="MsStaffId" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MsStaffId</Value>
+    </Setting>
+    <Setting Name="ExtendedPropertySchema" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://schemas.microsoft.com/mapi/string/{00020329-0000-0000-C000-000000000046}/</Value>
+    </Setting>
+    <Setting Name="ImportPhotos" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
