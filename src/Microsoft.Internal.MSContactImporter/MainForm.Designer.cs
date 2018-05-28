@@ -226,9 +226,9 @@
             this.label2.Location = new System.Drawing.Point(369, 180);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(393, 25);
+            this.label2.Size = new System.Drawing.Size(387, 25);
             this.label2.TabIndex = 24;
-            this.label2.Text = "Works better with the VPN connected !!!";
+            this.label2.Text = "Works better with the VPN connected!!!";
             // 
             // txtPassword
             // 
@@ -404,9 +404,9 @@
             this.rdoUpdate.Location = new System.Drawing.Point(32, 92);
             this.rdoUpdate.Margin = new System.Windows.Forms.Padding(6);
             this.rdoUpdate.Name = "rdoUpdate";
-            this.rdoUpdate.Size = new System.Drawing.Size(279, 29);
+            this.rdoUpdate.Size = new System.Drawing.Size(758, 29);
             this.rdoUpdate.TabIndex = 9;
-            this.rdoUpdate.Text = "Update existing contacts";
+            this.rdoUpdate.Text = "Update existing contacts (check above if you want to update photos a well)";
             this.rdoUpdate.UseVisualStyleBackColor = true;
             // 
             // rdioImport
