@@ -17,31 +17,38 @@ namespace Microsoft.Internal.MSContactImporter
 
         public OutlookUtils()
         {
-            outlook = new Outlook.Application();
-
-            //Searching for Contacts folder if Microsoft corp mailbox is not the default one
-            Outlook.Folders folders = outlook.Session.Folders;
-            foreach (Outlook.Folder f in folders)
+            try
             {
-                if (f.Name.ToLower().EndsWith("@microsoft.com"))
+                outlook = new Outlook.Application();
+
+                //Searching for Contacts folder if Microsoft corp mailbox is not the default one
+                Outlook.Folders folders = outlook.Session.Folders;
+                foreach (Outlook.Folder f in folders)
                 {
-                    foreach (Outlook.Folder subf in f.Folders)
+                    if (f.Name.ToLower().EndsWith("@microsoft.com"))
                     {
-                        if (subf.Name.ToLower() == "contacts")
+                        foreach (Outlook.Folder subf in f.Folders)
                         {
-                            contactsFolder = outlook.Session.GetFolderFromID(subf.EntryID);
-                            break;
+                            if (subf.Name.ToLower() == "contacts")
+                            {
+                                contactsFolder = outlook.Session.GetFolderFromID(subf.EntryID);
+                                break;
+                            }
                         }
+
+                        if (contactsFolder != null) //if contacts folder was found
+                            break;
                     }
-
-                    if (contactsFolder != null) //if contacts folder was found
-                        break;
                 }
+
+                contactsItems = contactsFolder.Items;
+
+                CreateCategory();
             }
-
-            contactsItems = contactsFolder.Items;
-
-            CreateCategory();
+            catch (Exception ex)
+            {
+                Logger.LogMessageToConsole("ERROR: " + ex.Message);
+            }
         }
 
         private void CreateCategory()
@@ -243,12 +250,6 @@ namespace Microsoft.Internal.MSContactImporter
         /// <summary>
         /// Test the connection to Outlook
         /// </summary>
-        /// <param name="useAutodiscoverMode"></param>
-        /// <param name="onCorpNetwork"></param>
-        /// <param name="login"></param>
-        /// <param name="password"></param>
-        /// <param name="url"></param>
-        /// <returns></returns>
         internal bool TestConnection()
         {
             try
