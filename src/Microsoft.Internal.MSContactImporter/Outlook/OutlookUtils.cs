@@ -21,24 +21,31 @@ namespace Microsoft.Internal.MSContactImporter
             {
                 outlook = new Outlook.Application();
 
-                //Searching for Contacts folder if Microsoft corp mailbox is not the default one
-                Outlook.Folders folders = outlook.Session.Folders;
-                foreach (Outlook.Folder f in folders)
+                try
                 {
-                    if (f.Name.ToLower().EndsWith("@microsoft.com"))
+                    //Searching for Contacts folder if Microsoft corp mailbox is not the default one
+                    Outlook.Folders folders = outlook.Session.Folders;
+                    foreach (Outlook.Folder f in folders)
                     {
-                        foreach (Outlook.Folder subf in f.Folders)
+                        if (f.Name.ToLower().EndsWith("@microsoft.com"))
                         {
-                            if (subf.Name.ToLower() == "contacts")
+                            foreach (Outlook.Folder subf in f.Folders)
                             {
-                                contactsFolder = outlook.Session.GetFolderFromID(subf.EntryID);
-                                break;
+                                if (subf.Name.ToLower() == "contacts")
+                                {
+                                    contactsFolder = outlook.Session.GetFolderFromID(subf.EntryID);
+                                    break;
+                                }
                             }
-                        }
 
-                        if (contactsFolder != null) //if contacts folder was found
-                            break;
+                            if (contactsFolder != null) //if contacts folder was found
+                                break;
+                        }
                     }
+                }
+                catch //We've seen one case were looping through the folders crashed (Outlook corruption??). In this case we use the default Contacts folder
+                {
+                    contactsFolder = outlook.Session.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderContacts);
                 }
 
                 contactsItems = contactsFolder.Items;
