@@ -29,8 +29,8 @@ namespace Microsoft.Internal.MSContactImporter
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Original idea: Pascal BELAUD (a.k.a Président Maréchal of FrFreeD)\r\nUpgraded by: Louis-Guillaume MORAND (a.k.a LG)\r\n" +
-                "Upgraded by: Aurélien NORIE (a.k.a aurnor)\r\n" +
+            MessageBox.Show("Original idea: Pascal B. (a.k.a Président Maréchal of FrFreeD)\r\nUpgraded by: Louis-Guillaume M. (a.k.a LG)\r\n" +
+                "Upgraded by: Aurélien N. (a.k.a aurnor)\r\n" +
                 "Sponsored by La e-cig c'est mal\r\nUsed by Votez FrFreed sur Yammer en 2076\r\nValidated by Qui s'occupe des stages ?");
         }
 
@@ -76,14 +76,14 @@ namespace Microsoft.Internal.MSContactImporter
         {
             tabControl.SelectedIndex = tabControl.SelectedIndex + 1;
             btnNext.Enabled = tabControl.SelectedIndex != tabControl.TabCount - 1;
-            btnPrevious.Enabled = tabControl.SelectedIndex != 0;
+            btnPrevious.Visible = tabControl.SelectedIndex != 0;
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             tabControl.SelectedIndex = tabControl.SelectedIndex - 1;
             btnNext.Enabled = tabControl.SelectedIndex != tabControl.TabCount - 1;
-            btnPrevious.Enabled = tabControl.SelectedIndex != 0;
+            btnPrevious.Visible = tabControl.SelectedIndex != 0;
         }
 
         private void btnTest_Click(object sender, EventArgs e)
