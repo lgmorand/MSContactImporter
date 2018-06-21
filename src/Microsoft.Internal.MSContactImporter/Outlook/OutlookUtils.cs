@@ -31,7 +31,7 @@ namespace Microsoft.Internal.MSContactImporter
                         {
                             foreach (Outlook.Folder subf in f.Folders)
                             {
-                                if (subf.Name.ToLower() == "contacts")
+                                if (subf.Name.ToLower() == "contacts") //Will work for French or English/US version of Outlook
                                 {
                                     contactsFolder = outlook.Session.GetFolderFromID(subf.EntryID);
                                     break;
@@ -43,10 +43,11 @@ namespace Microsoft.Internal.MSContactImporter
                         }
                     }
                 }
-                catch //We've seen one case were looping through the folders crashed (Outlook corruption??). In this case we use the default Contacts folder
-                {
+                catch { } //We've seen one case were looping through the folders crashed (Outlook corruption??). 
+                //In this case we use the default Contacts folder (just below)
+                
+                if (contactsFolder == null) //For languages where "contacts" folder is named differently, we will exit the two ForEach loops without any contact folder. In this case we take Outlook default contacts folder
                     contactsFolder = outlook.Session.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderContacts);
-                }
 
                 contactsItems = contactsFolder.Items;
 

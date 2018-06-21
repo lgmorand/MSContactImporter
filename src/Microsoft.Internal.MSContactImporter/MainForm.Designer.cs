@@ -42,6 +42,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new Microsoft.Internal.MSContactImporter.Controls.SimpleTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,6 +55,8 @@
             this.Alias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RecurseLevel = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkBoxImportPhotos = new System.Windows.Forms.CheckBox();
             this.lblMessage = new System.Windows.Forms.Label();
             this.rdioDelete = new System.Windows.Forms.RadioButton();
@@ -63,19 +66,20 @@
             this.btnGo = new System.Windows.Forms.Button();
             this.txtConsole = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvSettings)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,17 +89,19 @@
             this.panel1.Controls.Add(this.btnPrevious);
             this.panel1.Controls.Add(this.btnNext);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 181);
+            this.panel1.Location = new System.Drawing.Point(0, 346);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(613, 36);
+            this.panel1.Size = new System.Drawing.Size(1226, 69);
             this.panel1.TabIndex = 1;
             // 
             // btnTest
             // 
             this.btnTest.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnTest.Location = new System.Drawing.Point(499, 6);
+            this.btnTest.Location = new System.Drawing.Point(998, 12);
+            this.btnTest.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(105, 23);
+            this.btnTest.Size = new System.Drawing.Size(210, 44);
             this.btnTest.TabIndex = 12;
             this.btnTest.Text = "Test connection";
             this.btnTest.UseVisualStyleBackColor = true;
@@ -104,9 +110,10 @@
             // btnPrevious
             // 
             this.btnPrevious.Enabled = false;
-            this.btnPrevious.Location = new System.Drawing.Point(415, 6);
+            this.btnPrevious.Location = new System.Drawing.Point(830, 12);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(78, 23);
+            this.btnPrevious.Size = new System.Drawing.Size(156, 44);
             this.btnPrevious.TabIndex = 1;
             this.btnPrevious.Text = "Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
@@ -115,9 +122,10 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(499, 6);
+            this.btnNext.Location = new System.Drawing.Point(998, 12);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.Size = new System.Drawing.Size(150, 44);
             this.btnNext.TabIndex = 0;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -131,8 +139,9 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 4, 0, 4);
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(613, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1226, 44);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -141,13 +150,13 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(64, 36);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(151, 38);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -156,13 +165,13 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(38, 36);
             this.toolStripMenuItem1.Text = "?";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(179, 38);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -172,12 +181,12 @@
             this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabControl.Location = new System.Drawing.Point(0, 24);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl.Location = new System.Drawing.Point(0, 44);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.SimpleMode = true;
-            this.tabControl.Size = new System.Drawing.Size(613, 157);
+            this.tabControl.Size = new System.Drawing.Size(1226, 302);
             this.tabControl.TabIndex = 2;
             // 
             // tabPage1
@@ -187,45 +196,62 @@
             this.tabPage1.Controls.Add(this.txtEmail);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Location = new System.Drawing.Point(8, 39);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(605, 131);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1210, 255);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Connect";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::Microsoft.Internal.MSContactImporter.Properties.Resources.icons8_error_48;
+            this.pictureBox3.Location = new System.Drawing.Point(944, 156);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(34, 33);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 25;
+            this.pictureBox3.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox3, "Works better with the VPN");
+            // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(171, 78);
+            this.txtPassword.Location = new System.Drawing.Point(342, 150);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(295, 20);
+            this.txtPassword.Size = new System.Drawing.Size(586, 31);
             this.txtPassword.TabIndex = 22;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(171, 52);
+            this.txtEmail.Location = new System.Drawing.Point(342, 100);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(295, 20);
+            this.txtEmail.Size = new System.Drawing.Size(586, 31);
             this.txtEmail.TabIndex = 21;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(95, 82);
+            this.label5.Location = new System.Drawing.Point(190, 158);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(106, 25);
             this.label5.TabIndex = 20;
             this.label5.Text = "Password";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(95, 56);
+            this.label4.Location = new System.Drawing.Point(190, 108);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.Size = new System.Drawing.Size(65, 25);
             this.label4.TabIndex = 19;
             this.label4.Text = "Email";
             // 
@@ -235,11 +261,11 @@
             this.tabPage3.Controls.Add(this.btnDeleteAlias);
             this.tabPage3.Controls.Add(this.btnAddAlias);
             this.tabPage3.Controls.Add(this.gdvSettings);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Location = new System.Drawing.Point(8, 39);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Size = new System.Drawing.Size(605, 131);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Size = new System.Drawing.Size(1210, 255);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Settings";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -247,18 +273,19 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 9);
+            this.label6.Location = new System.Drawing.Point(10, 17);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(334, 13);
+            this.label6.Size = new System.Drawing.Size(679, 25);
             this.label6.TabIndex = 25;
             this.label6.Text = "Define the alias(es) of people whom you want to retrieve subordinates";
             // 
             // btnDeleteAlias
             // 
-            this.btnDeleteAlias.Location = new System.Drawing.Point(530, 55);
-            this.btnDeleteAlias.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeleteAlias.Location = new System.Drawing.Point(1060, 106);
+            this.btnDeleteAlias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDeleteAlias.Name = "btnDeleteAlias";
-            this.btnDeleteAlias.Size = new System.Drawing.Size(71, 24);
+            this.btnDeleteAlias.Size = new System.Drawing.Size(142, 46);
             this.btnDeleteAlias.TabIndex = 4;
             this.btnDeleteAlias.Text = "Delete";
             this.btnDeleteAlias.UseVisualStyleBackColor = true;
@@ -266,10 +293,10 @@
             // 
             // btnAddAlias
             // 
-            this.btnAddAlias.Location = new System.Drawing.Point(530, 28);
-            this.btnAddAlias.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddAlias.Location = new System.Drawing.Point(1060, 54);
+            this.btnAddAlias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAlias.Name = "btnAddAlias";
-            this.btnAddAlias.Size = new System.Drawing.Size(71, 24);
+            this.btnAddAlias.Size = new System.Drawing.Size(142, 46);
             this.btnAddAlias.TabIndex = 3;
             this.btnAddAlias.Text = "Add";
             this.btnAddAlias.UseVisualStyleBackColor = true;
@@ -286,10 +313,11 @@
             this.gdvSettings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Alias,
             this.RecurseLevel});
-            this.gdvSettings.Location = new System.Drawing.Point(4, 28);
+            this.gdvSettings.Location = new System.Drawing.Point(8, 54);
+            this.gdvSettings.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gdvSettings.MultiSelect = false;
             this.gdvSettings.Name = "gdvSettings";
-            this.gdvSettings.Size = new System.Drawing.Size(522, 106);
+            this.gdvSettings.Size = new System.Drawing.Size(1044, 204);
             this.gdvSettings.TabIndex = 2;
             // 
             // Alias
@@ -310,6 +338,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pictureBox5);
+            this.tabPage2.Controls.Add(this.pictureBox4);
             this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.Controls.Add(this.checkBoxImportPhotos);
@@ -319,21 +349,48 @@
             this.tabPage2.Controls.Add(this.rdioImport);
             this.tabPage2.Controls.Add(this.progressBar);
             this.tabPage2.Controls.Add(this.btnGo);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Location = new System.Drawing.Point(8, 39);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(605, 131);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1210, 255);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Action";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::Microsoft.Internal.MSContactImporter.Properties.Resources.icons8_error_48;
+            this.pictureBox2.Location = new System.Drawing.Point(582, 54);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "It will require a Graph Api authentication and will take MUCH more time");
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Microsoft.Internal.MSContactImporter.Properties.Resources.icons8_help_48;
+            this.pictureBox1.Location = new System.Drawing.Point(225, 48);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "This will import contacts but also update those already imported by this tool");
+            // 
             // checkBoxImportPhotos
             // 
             this.checkBoxImportPhotos.AutoSize = true;
-            this.checkBoxImportPhotos.Location = new System.Drawing.Point(204, 28);
+            this.checkBoxImportPhotos.Location = new System.Drawing.Point(408, 54);
+            this.checkBoxImportPhotos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.checkBoxImportPhotos.Name = "checkBoxImportPhotos";
-            this.checkBoxImportPhotos.Size = new System.Drawing.Size(90, 17);
+            this.checkBoxImportPhotos.Size = new System.Drawing.Size(174, 29);
             this.checkBoxImportPhotos.TabIndex = 12;
             this.checkBoxImportPhotos.Text = "Import photos";
             this.checkBoxImportPhotos.UseVisualStyleBackColor = true;
@@ -342,17 +399,19 @@
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(344, 117);
+            this.lblMessage.Location = new System.Drawing.Point(688, 225);
+            this.lblMessage.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 13);
+            this.lblMessage.Size = new System.Drawing.Size(0, 25);
             this.lblMessage.TabIndex = 11;
             // 
             // rdioDelete
             // 
             this.rdioDelete.AutoSize = true;
-            this.rdioDelete.Location = new System.Drawing.Point(16, 71);
+            this.rdioDelete.Location = new System.Drawing.Point(32, 137);
+            this.rdioDelete.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.rdioDelete.Name = "rdioDelete";
-            this.rdioDelete.Size = new System.Drawing.Size(141, 17);
+            this.rdioDelete.Size = new System.Drawing.Size(276, 29);
             this.rdioDelete.TabIndex = 10;
             this.rdioDelete.Text = "Delete orphans contacts";
             this.rdioDelete.UseVisualStyleBackColor = true;
@@ -360,9 +419,10 @@
             // rdoUpdate
             // 
             this.rdoUpdate.AutoSize = true;
-            this.rdoUpdate.Location = new System.Drawing.Point(16, 48);
+            this.rdoUpdate.Location = new System.Drawing.Point(32, 92);
+            this.rdoUpdate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.rdoUpdate.Name = "rdoUpdate";
-            this.rdoUpdate.Size = new System.Drawing.Size(142, 17);
+            this.rdoUpdate.Size = new System.Drawing.Size(279, 29);
             this.rdoUpdate.TabIndex = 9;
             this.rdoUpdate.Text = "Update existing contacts";
             this.rdoUpdate.UseVisualStyleBackColor = true;
@@ -371,9 +431,10 @@
             // 
             this.rdioImport.AutoSize = true;
             this.rdioImport.Checked = true;
-            this.rdioImport.Location = new System.Drawing.Point(16, 25);
+            this.rdioImport.Location = new System.Drawing.Point(32, 48);
+            this.rdioImport.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.rdioImport.Name = "rdioImport";
-            this.rdioImport.Size = new System.Drawing.Size(101, 17);
+            this.rdioImport.Size = new System.Drawing.Size(195, 29);
             this.rdioImport.TabIndex = 8;
             this.rdioImport.TabStop = true;
             this.rdioImport.Text = "Import contacts ";
@@ -381,16 +442,18 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(13, 100);
+            this.progressBar.Location = new System.Drawing.Point(26, 192);
+            this.progressBar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(584, 26);
+            this.progressBar.Size = new System.Drawing.Size(1168, 50);
             this.progressBar.TabIndex = 7;
             // 
             // btnGo
             // 
-            this.btnGo.Location = new System.Drawing.Point(529, 25);
+            this.btnGo.Location = new System.Drawing.Point(1058, 48);
+            this.btnGo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(68, 61);
+            this.btnGo.Size = new System.Drawing.Size(136, 117);
             this.btnGo.TabIndex = 6;
             this.btnGo.Text = "GO";
             this.btnGo.UseVisualStyleBackColor = true;
@@ -401,61 +464,54 @@
             this.txtConsole.BackColor = System.Drawing.Color.Black;
             this.txtConsole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtConsole.ForeColor = System.Drawing.Color.Lime;
-            this.txtConsole.Location = new System.Drawing.Point(0, 217);
+            this.txtConsole.Location = new System.Drawing.Point(0, 415);
+            this.txtConsole.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtConsole.Multiline = true;
             this.txtConsole.Name = "txtConsole";
             this.txtConsole.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtConsole.Size = new System.Drawing.Size(613, 207);
+            this.txtConsole.Size = new System.Drawing.Size(1226, 400);
             this.txtConsole.TabIndex = 4;
             // 
-            // pictureBox2
+            // pictureBox4
             // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::Microsoft.Internal.MSContactImporter.Properties.Resources.icons8_error_48;
-            this.pictureBox2.Location = new System.Drawing.Point(292, 28);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(17, 17);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox2, "It will require a Graph Api authentication and will take MUCH more time");
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = global::Microsoft.Internal.MSContactImporter.Properties.Resources.icons8_help_48;
+            this.pictureBox4.Location = new System.Drawing.Point(312, 92);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(34, 33);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 15;
+            this.pictureBox4.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox4, "This will only update contacts already imported by this tool");
             // 
-            // pictureBox1
+            // pictureBox5
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::Microsoft.Internal.MSContactImporter.Properties.Resources.icons8_help_48;
-            this.pictureBox1.Location = new System.Drawing.Point(111, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(17, 17);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox1, "This will imports contacts but also update them if they are already existing");
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::Microsoft.Internal.MSContactImporter.Properties.Resources.icons8_error_48;
-            this.pictureBox3.Location = new System.Drawing.Point(472, 81);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(17, 17);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 25;
-            this.pictureBox3.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox3, "Works better with the VPN");
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::Microsoft.Internal.MSContactImporter.Properties.Resources.icons8_help_48;
+            this.pictureBox5.Location = new System.Drawing.Point(312, 137);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(34, 33);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 16;
+            this.pictureBox5.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox5, "This will delete contacts imported by this tool, that does not exist anymore in A" +
+        "ctive Directory");
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(613, 424);
+            this.ClientSize = new System.Drawing.Size(1226, 815);
             this.Controls.Add(this.txtConsole);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "MS Contact Importer";
@@ -466,6 +522,7 @@
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvSettings)).EndInit();
@@ -473,7 +530,8 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,6 +573,8 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 
