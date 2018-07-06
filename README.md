@@ -11,10 +11,10 @@ Download the latest version from the releases page: [https://github.com/lgmorand
 
 ## Usage
 
-Run it, specify your email and your domain's password and then follow the wizard. You'll have to add the alias(es) of the manager(s) from whom you want to retrieve the subordinates.
+Run it, specify your email and your domain's password and then follow the wizard. You'll have to add the alias(es) of the manager(s) from whom you want to retrieve the subordinates. Since version 1.1 you can also add the alias(es) of distribution list(s) or security group(s) to import all its (their) members (with their subordinates as well if you want to). 
 The program can:
 
-- add contacts : add contacts who are subordinates of the defined alias(es)
+- add contacts : add contacts who are subordinates of the defined alias(es) / add members of the defined distribution list or security group
 - update contacts : it will update the information for the contacts previously imported
 - delete duplicate : delete previously imported contacts which are not in the directory anymore
 
@@ -22,7 +22,7 @@ The program can:
 
 ## Compatibility
 
-The program has been tested against Office 2016 *(32 bits)* and requires the minimum version of .Net framework 4.5.2
+The program has been tested against Office 2016 *(32 bits and 64 bits)* and requires the minimum version of .Net framework 4.5.2
 
 ## Known issues and solution
 
