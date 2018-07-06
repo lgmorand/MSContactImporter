@@ -1,4 +1,5 @@
-﻿using System.DirectoryServices;
+﻿using System.Collections.Generic;
+using System.DirectoryServices;
 
 namespace Microsoft.Internal.MSContactImporter
 {
@@ -24,6 +25,34 @@ namespace Microsoft.Internal.MSContactImporter
                 result = string.Empty;
             }
             return result;
+        }
+
+        //Get members of a distribution list
+        internal static List<string> GetMembers(this DirectoryEntry directoryEntry)
+        {
+            List<string> members;
+            try
+            {
+                PropertyValueCollection values = directoryEntry.Properties["member"];
+                if (values.Count == 0)
+                {
+                    members = null;
+                }
+                else
+                {
+                    members = new List<string>();
+                    foreach (var member in values)
+                    {
+                        members.Add(member.ToString());
+                    }
+                    
+                }
+            }
+            catch
+            {
+                members = null;
+            }
+            return members;
         }
     }
 }

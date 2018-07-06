@@ -32,7 +32,7 @@ namespace Microsoft.Internal.MSContactImporter
                 SearchResult result = directorySearcher.FindOne();
                 if (result == null)
                 {
-                    Console.WriteLine(string.Format("GetDistinguishedName(logon={0})", logon));
+                    //Console.WriteLine(string.Format("GetDistinguishedName(logon={0})", logon));
                     result2 = null;
                 }
                 else
@@ -46,7 +46,8 @@ namespace Microsoft.Internal.MSContactImporter
         internal void LoadActiveDirectory(string alias, bool recursive, int level, Func<bool> cancel, Action<string> label)
         {
             string distinguishedName = this.GetDistinguishedName(alias);
-            this.LoadTree(distinguishedName, null, recursive, level, cancel, label);
+            if (distinguishedName != null)
+                this.LoadTree(distinguishedName, null, recursive, level, cancel, label);
         }
 
         internal void LoadFromXml(string filePath)
@@ -425,29 +426,44 @@ namespace Microsoft.Internal.MSContactImporter
                 return;
             }
 
-            if (manager == null)
+            //Check if we want to load a user or a a distribution list
+            string name = string.Format(Settings.Default.DistinguishedNameFormat, this.EscapeDistinguishedName(distinguishedName));
+            DirectoryEntry directory = GetDirectoryEntry(name);
+            List<string> members = directory.GetMembers();
+            if (members != null) //Loading a distribution list
             {
-                using (DirectorySearcher directorySearcher = new DirectorySearcher())
+                foreach (string member in members)
                 {
-                    directorySearcher.SearchRoot = GetDirectoryEntry(Settings.Default.RootDirectoryEntry);
-                    directorySearcher.Filter = string.Format("(distinguishedName={0})", this.EscapeDistinguishedName(distinguishedName));
-                    directorySearcher.PropertiesToLoad.Add("manager");
-                    SearchResult result = directorySearcher.FindOne();
-                    if (result != null && result.Properties["manager"].Count > 0)
-                    {
-                        manager = result.Properties["manager"][0].ToString();
-                    }
+                    //Call this function again for all members, to get the user (or other dl) and all his direct reports if user asked for it
+                    LoadTree(member, manager, recursive, level, cancel, label);
                 }
             }
-
-            this.LoadMSFTee(distinguishedName, manager, cancel, label);
-            if (recursive && (level > 0 || level == -1))
+            else //Loading a user and its direct reports
             {
-                if (level != -1)
+                if (manager == null)
                 {
-                    level--;
+                    using (DirectorySearcher directorySearcher = new DirectorySearcher())
+                    {
+                        directorySearcher.SearchRoot = GetDirectoryEntry(Settings.Default.RootDirectoryEntry);
+                        directorySearcher.Filter = string.Format("(distinguishedName={0})", this.EscapeDistinguishedName(distinguishedName));
+                        directorySearcher.PropertiesToLoad.Add("manager");
+                        SearchResult result = directorySearcher.FindOne();
+                        if (result != null && result.Properties["manager"].Count > 0)
+                        {
+                            manager = result.Properties["manager"][0].ToString();
+                        }
+                    }
                 }
-                this.GetDirectReports(distinguishedName, recursive, level, cancel, label);
+
+                this.LoadMSFTee(distinguishedName, manager, cancel, label);
+                if (recursive && (level > 0 || level == -1))
+                {
+                    if (level != -1)
+                    {
+                        level--;
+                    }
+                    this.GetDirectReports(distinguishedName, recursive, level, cancel, label);
+                }
             }
         }
     }

@@ -65,7 +65,7 @@ namespace Microsoft.Internal.MSContactImporter
 
         private void ClearPhotoCache()
         {
-            DirectoryInfo di = new DirectoryInfo(Application.UserAppDataPath+"\\photos");
+            DirectoryInfo di = new DirectoryInfo(Application.UserAppDataPath + "\\photos");
             if (di.Exists)
             {
                 di.Delete(true);
@@ -77,6 +77,7 @@ namespace Microsoft.Internal.MSContactImporter
             tabControl.SelectedIndex = tabControl.SelectedIndex + 1;
             btnNext.Enabled = tabControl.SelectedIndex != tabControl.TabCount - 1;
             btnPrevious.Visible = tabControl.SelectedIndex != 0;
+            btnPrevious.Enabled = tabControl.SelectedIndex != 0;
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -84,6 +85,12 @@ namespace Microsoft.Internal.MSContactImporter
             tabControl.SelectedIndex = tabControl.SelectedIndex - 1;
             btnNext.Enabled = tabControl.SelectedIndex != tabControl.TabCount - 1;
             btnPrevious.Visible = tabControl.SelectedIndex != 0;
+            btnPrevious.Enabled = tabControl.SelectedIndex != 0;
+
+            btnPrevious.Visible = tabControl.SelectedIndex != 0;
+
+            btnTest.Visible = tabControl.SelectedIndex == 0;
+            btnTest.Enabled = tabControl.SelectedIndex == 0;
         }
 
         private void btnTest_Click(object sender, EventArgs e)
@@ -145,7 +152,7 @@ namespace Microsoft.Internal.MSContactImporter
 
         internal DialogResult HandleAbortRetryCancel(Exception exception, IState state)
         {
-            return MessageBox.Show(this, string.Format("An error has occured:\r\n\nModule: {1}\r\nException: {0}\r\n\r\nWhat do you want to do?", exception.Message, ((State)state).Function), "Error", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1); 
+            return MessageBox.Show(this, string.Format("An error has occured:\r\n\nModule: {1}\r\nException: {0}\r\n\r\nWhat do you want to do?", exception.Message, ((State)state).Function), "Error", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
         }
 
         internal RootMSFTee XmlToRootMsfte(XElement xElement)
@@ -353,7 +360,7 @@ namespace Microsoft.Internal.MSContactImporter
                 GraphUtils graphUtils = null;
                 if (checkBoxImportPhotos.Checked)
                 {
-                    graphUtils = new GraphUtils(); 
+                    graphUtils = new GraphUtils();
                     await graphUtils.SigninAsync();
                 }
 
@@ -567,9 +574,9 @@ namespace Microsoft.Internal.MSContactImporter
                     this.progressBar.Maximum = outlookUtils.Contacts.Count;
                     this.progressBar.Value = 0;
 
-                    
 
-                    outlookUtils.Contacts.ForEach(delegate (Outlook.ContactItem contact) 
+
+                    outlookUtils.Contacts.ForEach(delegate (Outlook.ContactItem contact)
                     {
                         if (cancelUpdateContacts)
                         {

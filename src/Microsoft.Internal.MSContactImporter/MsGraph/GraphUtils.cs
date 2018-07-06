@@ -14,6 +14,7 @@ namespace Microsoft.Internal.MSContactImporter
         private readonly string _graphAPIEndpoint = "https://graph.microsoft.com/v1.0/";
         private readonly string[] _scopes = new string[] { "user.read", "user.readbasic.all" };
 
+        //Application name MSPhotoDownloader
         private static string ClientId = "3d53d92f-f208-4c15-8638-3d5c69661727";
         public static PublicClientApplication PublicClientApp = new PublicClientApplication(ClientId);
         private AuthenticationResult authResult;
