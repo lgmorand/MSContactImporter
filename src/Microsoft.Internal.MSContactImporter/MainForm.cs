@@ -37,19 +37,23 @@ namespace Microsoft.Internal.MSContactImporter
         private async void btnGo_Click(object sender, EventArgs e)
         {
             this.SaveRootMSFTees();
+            string operation = string.Empty;
 
             Stopwatch sw = new Stopwatch();
             sw.Start();
             if (rdioImport.Checked)
             {
+                operation = "import";
                 await ImportContacts();
             }
             else if (rdoUpdate.Checked)
             {
+                operation = "update contacts";
                 await UpdateContacts();
             }
             else if (rdioDelete.Checked)
             {
+                operation = "cleaning orphans contacts";
                 DeleteOrphansContacts();
             }
             sw.Stop();
@@ -60,7 +64,23 @@ namespace Microsoft.Internal.MSContactImporter
             if (checkBoxImportPhotos.Checked)
                 ClearPhotoCache();
 
-            MessageBox.Show("Operation finished");
+            MessageBox.Show(operation + " is finished");
+            OfferToDeleteLogs();
+        }
+
+        private void OfferToDeleteLogs()
+        {
+            if(MessageBox.Show("As the technical logs may contain personal information like the names and email of imported/edited contacts, we recommend to delete them. Do you allow us to delete those files ?","GDPR", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    File.Delete("log.txt");
+                }
+                catch
+                {
+                    MessageBox.Show("We were unable to delete the logs files located in the same folder than the app. Please delete them manually");
+                }
+            }
         }
 
         private void ClearPhotoCache()
