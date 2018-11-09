@@ -96,7 +96,7 @@ namespace Microsoft.Internal.MSContactImporter
             bool found = contact != null;
             if (!found)
             {
-                contact = contactsItems.Add();
+                contact = (Outlook.ContactItem)contactsItems.Add();
                 Outlook.PropertyAccessor pa = contact.PropertyAccessor;
                 pa.SetProperty(Settings.Default.ExtendedPropertySchema + Settings.Default.MsStaffId, msftee.Alias);
                 Marshal.ReleaseComObject(pa);
@@ -174,14 +174,14 @@ namespace Microsoft.Internal.MSContactImporter
         {
             this.Contacts = new List<Outlook.ContactItem>();
 
-            Outlook.ContactItem contact = contactsItems.Find("[Categories] = '" + Settings.Default.Categories + "'");
+            Outlook.ContactItem contact = (Outlook.ContactItem)contactsItems.Find("[Categories] = '" + Settings.Default.Categories + "'");
 
             if (contact != null)
                 this.Contacts.Add(contact);
 
             do
             {
-                contact = contactsItems.FindNext();
+                contact = (Outlook.ContactItem)contactsItems.FindNext();
                 if (contact != null)
                     this.Contacts.Add(contact);
 
@@ -194,7 +194,7 @@ namespace Microsoft.Internal.MSContactImporter
         internal void UpdateContact(Outlook.ContactItem contact, ADUtils adUtils, GraphUtils graphUtils)
         {
             Outlook.PropertyAccessor pa = contact.PropertyAccessor;
-            string logon = pa.GetProperty(Settings.Default.ExtendedPropertySchema + Settings.Default.MsStaffId);
+            string logon = pa.GetProperty(Settings.Default.ExtendedPropertySchema + Settings.Default.MsStaffId) as string;
             Marshal.ReleaseComObject(pa);
 
             MSFTee msftee = adUtils.LoadIndependantMSFTee(adUtils.GetDistinguishedName(logon), true);
