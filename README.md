@@ -1,9 +1,11 @@
 # MSContactImporter
 
+[![Build Status](https://lgmorand.visualstudio.com/MSContactImporter/_apis/build/status/lgmorand.MSContactImporter)](https://lgmorand.visualstudio.com/MSContactImporter/_build/latest?definitionId=18)
+
 ## Presentation
 
 Is an unofficial tool designed to import a large set of users from an ActiveDirectory into the Contacts list of Outlook based on the hierarchical structure of the directory.
-The tool has been tested for internal usage only [![Build Status](https://lgmorand.visualstudio.com/MSContactImporter/_apis/build/status/lgmorand.MSContactImporter)](https://lgmorand.visualstudio.com/MSContactImporter/_build/latest?definitionId=18)
+The tool has been tested for internal usage only 
 
 ## Download
 
