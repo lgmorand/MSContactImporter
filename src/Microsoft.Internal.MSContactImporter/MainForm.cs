@@ -248,7 +248,7 @@ namespace Microsoft.Internal.MSContactImporter
                         string distinguishedName = AbortRetryIgnorePattern.CallFunction<string>(delegate
                         {
                             Outlook.PropertyAccessor pa = contact.PropertyAccessor;
-                            string alias = pa.GetProperty(Settings.Default.ExtendedPropertySchema + Settings.Default.MsStaffId);
+                            string alias = pa.GetProperty(Settings.Default.ExtendedPropertySchema + Settings.Default.MsStaffId) as string;
                             Marshal.ReleaseComObject(pa);
                             return adUtils.GetDistinguishedName(alias);
                         }, state, delegate
