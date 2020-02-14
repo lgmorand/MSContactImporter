@@ -14,5 +14,5 @@ jobs:
 
     - name: MSBuild
       working-directory: src
-      run: msbuild Microsoft.Internal.MSContactImporter.csproj
+      run: msbuild Microsoft.Internal.MSContactImporter/Microsoft.Internal.MSContactImporter.csproj
       
