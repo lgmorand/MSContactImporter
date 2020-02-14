@@ -1,6 +1,6 @@
 # MSContactImporter
 
-[![Actions Status](https://github.com/lgmorand/MSContactImporter/workflows/build.yml/badge.svg)](https://github.com/lgmorand/MSContactImporter/actions)
+![CI Build](https://github.com/lgmorand/MSContactImporter/workflows/CI%20Build/badge.svg)
 
 ## Presentation
 
