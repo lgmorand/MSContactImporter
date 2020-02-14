@@ -8,11 +8,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    
+    - uses: actions/checkout@master
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
 
     - name: MSBuild
-      working-directory: src
-      run: msbuild Microsoft.Internal.MSContactImporter/Microsoft.Internal.MSContactImporter.csproj
+      working-directory: src/Microsoft.Internal.MSContactImporter
+      run: msbuild Microsoft.Internal.MSContactImporter.csproj
       
