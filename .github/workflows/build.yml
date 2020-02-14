@@ -16,7 +16,10 @@ jobs:
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
 
+    - name: restore nuget
+      run: nuget restore src/Microsoft.Internal.MSContactImporter.sln
+      
     - name: MSBuild
-      working-directory: src/Microsoft.Internal.MSContactImporter
-      run: msbuild Microsoft.Internal.MSContactImporter.csproj
+      working-directory: src
+      run: msbuild Microsoft.Internal.MSContactImporter.sln
       
