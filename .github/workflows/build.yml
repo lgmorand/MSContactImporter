@@ -21,5 +21,9 @@ jobs:
       
     - name: MSBuild
       working-directory: src
-      run: msbuild Microsoft.Internal.MSContactImporter.sln
-      
+      run: msbuild Microsoft.Internal.MSContactImporter.sln -p:Configuration=Release
+    
+    - uses: actions/upload-artifact@v1
+      with:
+        name: MSContactImporter
+        path: src/Microsoft.Internal.MSContactImporter/bin/Release
