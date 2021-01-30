@@ -27,6 +27,10 @@ jobs:
       working-directory: src
       run: msbuild Microsoft.Internal.MSContactImporter.sln -p:Configuration=Release
     
+    - name: remove useles xml files
+      run: "rm *.xml"
+      working-directory: src/Microsoft.Internal.MSContactImporter/bin/Release
+      
     - uses: actions/upload-artifact@v1
       with:
         name: MSContactImporter
