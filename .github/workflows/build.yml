@@ -17,8 +17,8 @@ jobs:
       with:
         nuget-version: '5.x'
       
-    - name: Setup MSBuild.exe
-      uses: warrenbuckley/Setup-MSBuild@v1
+    - name: setup-msbuild
+      uses: microsoft/setup-msbuild@v1
 
     - name: restore nuget
       run: nuget restore src/Microsoft.Internal.MSContactImporter.sln
