@@ -12,7 +12,7 @@ namespace Microsoft.Internal.MSContactImporter.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.2.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -37,7 +37,7 @@ namespace Microsoft.Internal.MSContactImporter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<RootMSFTees><RootMSFTee logon=\"capurass\" recurseLevel=\"-1\" /></RootMSFTees>")]
+        [global::System.Configuration.DefaultSettingValueAttribute("<RootMSFTees><RootMSFTee logon=\"cdebilbao\" recurseLevel=\"-1\" /></RootMSFTees>")]
         public string RootMSFTees {
             get {
                 return ((string)(this["RootMSFTees"]));
@@ -49,7 +49,7 @@ namespace Microsoft.Internal.MSContactImporter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("GC://corp.microsoft.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("GC://europe.corp.microsoft.com")]
         public string RootDirectoryEntry {
             get {
                 return ((string)(this["RootDirectoryEntry"]));
@@ -61,7 +61,7 @@ namespace Microsoft.Internal.MSContactImporter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("GC://corp.microsoft.com/{0}")]
+        [global::System.Configuration.DefaultSettingValueAttribute("GC://europe.corp.microsoft.com/{0}")]
         public string DistinguishedNameFormat {
             get {
                 return ((string)(this["DistinguishedNameFormat"]));
