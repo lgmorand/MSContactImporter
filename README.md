@@ -28,6 +28,10 @@ The program has been tested against Office 2016 *(32 bits and 64 bits)* and requ
 
 ## Known issues and solution
 
+### Testing connection is failing
+
+Solution: open the config file and ensure that RootMSFTees contains a valid alias name
+
 ### The property XXXX/MsStaffId is unknown or cannot be found
 
 Solution: It means that you have corrupted contacts inside the category "Ms Staff v2". Remove old contacts and re-import them
