@@ -23,11 +23,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
     
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: csharp
-        
     - uses: nuget/setup-nuget@v1
       with:
         nuget-version: '5.x'
@@ -38,6 +33,11 @@ jobs:
     - name: restore nuget
       run: nuget restore src/Microsoft.Internal.MSContactImporter.sln
       
+     - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: csharp
+        
     - name: MSBuild
       working-directory: src
       run: msbuild Microsoft.Internal.MSContactImporter.sln -p:Configuration=Release
