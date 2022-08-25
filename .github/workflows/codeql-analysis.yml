@@ -33,7 +33,7 @@ jobs:
     - name: restore nuget
       run: nuget restore src/Microsoft.Internal.MSContactImporter.sln
       
-     - name: Initialize CodeQL
+    - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
       with:
         languages: csharp
