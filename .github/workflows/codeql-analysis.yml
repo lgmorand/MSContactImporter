@@ -40,7 +40,7 @@ jobs:
         
     - name: MSBuild
       working-directory: src
-      run: msbuild Microsoft.Internal.MSContactImporter.sln -p:Configuration=Release
+      run: msbuild Microsoft.Internal.MSContactImporter.sln -p:Configuration=Release -p:UseSharedCompilation=false
 
 
     - name: Perform CodeQL Analysis
