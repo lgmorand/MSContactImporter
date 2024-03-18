@@ -11,14 +11,14 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v4
     
-    - uses: nuget/setup-nuget@v1
+    - uses: nuget/setup-nuget@v2
       with:
         nuget-version: '5.x'
       
     - name: setup-msbuild
-      uses: microsoft/setup-msbuild@v1
+      uses: microsoft/setup-msbuild@v2
 
     - name: restore nuget
       run: nuget restore src/Microsoft.Internal.MSContactImporter.sln
@@ -31,7 +31,7 @@ jobs:
       run: "rm *.xml"
       working-directory: src/Microsoft.Internal.MSContactImporter/bin/Release
       
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v4
       with:
         name: MSContactImporter
         path: src/Microsoft.Internal.MSContactImporter/bin/Release
