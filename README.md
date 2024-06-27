@@ -18,13 +18,13 @@ The program can:
 
 - add contacts : add contacts who are subordinates of the defined alias(es) / add members of the defined distribution list or security group
 - update contacts : it will update the information for the contacts previously imported
-- delete duplicate : delete previously imported contacts which are not in the directory anymore
+- delete orphans : delete previously imported contacts which are not in the directory anymore
 
 > /!\ All managed contacts are marked in the category "Ms Staff v2" and others contacts will remain untouched
 
 ## Compatibility
 
-The program has been tested against Office 2016 *(32 bits and 64 bits)* and requires the minimum version of .Net framework 4.5.2
+The program has been tested against Office 2016 *(32 bits and 64 bits)* and requires the minimum version of .Net framework 4.8
 
 ## Known issues and solution
 

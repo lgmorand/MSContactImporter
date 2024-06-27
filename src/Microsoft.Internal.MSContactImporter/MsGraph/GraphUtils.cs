@@ -16,7 +16,10 @@ namespace Microsoft.Internal.MSContactImporter
 
         //Application name MSPhotoDownloader
         private static string ClientId = "3d53d92f-f208-4c15-8638-3d5c69661727";
-        public static PublicClientApplication PublicClientApp = new PublicClientApplication(ClientId);
+        //public static PublicClientApplication PublicClientApp = new PublicClientApplication(ClientId);
+        IPublicClientApplication PublicClientApp = PublicClientApplicationBuilder.Create(ClientId).Build();
+
+
         private AuthenticationResult authResult;
 
         public async Task SigninAsync()
@@ -25,11 +28,7 @@ namespace Microsoft.Internal.MSContactImporter
 
             try
             {
-                authResult = await PublicClientApp.AcquireTokenSilentAsync(_scopes, PublicClientApp.Users.FirstOrDefault());
-            }
-            catch (MsalUiRequiredException)
-            {
-                authResult = await PublicClientApp.AcquireTokenAsync(_scopes);
+                authResult = await PublicClientApp.AcquireTokenInteractive(scopes: _scopes).ExecuteAsync();
             }
             catch (Exception ex)
             {
