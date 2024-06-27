@@ -144,7 +144,7 @@ namespace Microsoft.Internal.MSContactImporter
                 try
                 {
                     string picturePath = graphUtils.GetPhotoForUserAsync(msftee).Result;
-                    if (!string.IsNullOrEmpty(picturePath))
+                     if (!string.IsNullOrEmpty(picturePath))
                         contact.AddPicture(picturePath); //Not using async/await pattern to avoid changing all the rest of the calling code
                 }
                 catch { } //Simply ignoring the error, contact will have no picture
