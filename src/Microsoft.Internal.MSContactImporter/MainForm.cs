@@ -70,7 +70,7 @@ namespace Microsoft.Internal.MSContactImporter
 
         private void OfferToDeleteLogs()
         {
-            if(MessageBox.Show("As the technical logs may contain personal information like the names and email of imported/edited contacts, we recommend to delete them. Do you allow us to delete those files ?","GDPR", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if(MessageBox.Show("As the technical logs may contain personal information like the names and email of imported/edited contacts, we recommend to delete them. Do you want delete those files ?","GDPR", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {

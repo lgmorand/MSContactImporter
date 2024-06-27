@@ -229,7 +229,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 25;
             this.pictureBox3.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox3, "Works better with the VPN");
+            this.toolTip1.SetToolTip(this.pictureBox3, "Works better with the VPN enabled");
             // 
             // txtPassword
             // 

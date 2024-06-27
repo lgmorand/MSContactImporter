@@ -28,6 +28,10 @@ The program has been tested against Office 2016 *(32 bits and 64 bits)* and requ
 
 ## Known issues and solution
 
+### Testing connection is failing
+
+Solution: open the config file and ensure that RootMSFTees contains a valid alias name
+
 ### The property XXXX/MsStaffId is unknown or cannot be found
 
 Solution: It means that you have corrupted contacts inside the category "Ms Staff v2". Remove old contacts and re-import them
@@ -35,3 +39,7 @@ Solution: It means that you have corrupted contacts inside the category "Ms Staf
 ### Un ou plusieurs éléments dans le dossiers que vous avez synchronisé ne correspondent pas
 
 Solution: There are conflicted elements in your Outlook data file. Please clean it before using the tool: [https://www.fieldstonsoftware.com/support/support_gsyncit_olsyncfail.shtml](https://www.fieldstonsoftware.com/support/support_gsyncit_olsyncfail.shtml)
+
+### My contacts have a prefix "MS:" on my iphone
+
+Indeed, there is a field (file as) which contains a prefix and was never used. with iOS 15, Apple decided to change the behavior of the Contacts app and now uses this field. There is not known workaround in settings to change the display format.

@@ -1,0 +1,47 @@
+name: "CodeQL"
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ "master" ]
+  schedule:
+    - cron: '28 10 * * 4'
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: windows-2019
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - uses: nuget/setup-nuget@v1
+      with:
+        nuget-version: '5.x'
+      
+    - name: setup-msbuild
+      uses: microsoft/setup-msbuild@v2
+
+    - name: restore nuget
+      run: nuget restore src/Microsoft.Internal.MSContactImporter.sln
+      
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: csharp
+        
+    - name: MSBuild
+      working-directory: src
+      run: msbuild Microsoft.Internal.MSContactImporter.sln -p:Configuration=Release -p:UseSharedCompilation=false
+
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
