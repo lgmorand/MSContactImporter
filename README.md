@@ -24,7 +24,7 @@ The program can:
 
 ## Compatibility
 
-The program has been tested against Office 2016 *(32 bits and 64 bits)* and requires the minimum version of .Net framework 4.8
+The program has been tested against Office 2016 *(32 bits and 64 bits)* and requires the minimum version of .Net framework 4.8.1
 
 ## Known issues and solution
 
